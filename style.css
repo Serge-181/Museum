@@ -20,6 +20,7 @@ body {
 .container {
     max-width: 1440px;
     margin: 0 auto;
+    box-sizing: border-box;
     /* border: 1px solid coral; */
 }
 
@@ -80,10 +81,10 @@ li {
 
 .logo-icon {
     background-image: url("assets/svg/Logo.svg");
-    
+
     width: 49px;
-    height: 26px;    
-    
+    height: 26px;
+
     transition: 0.2s;
     /* скорость изменения цвета логотипа */
 }
@@ -374,4 +375,46 @@ h1 {
     max-width: 720px;
     max-height: 700px;
     align-self: flex-end;
+}
+
+.video .container {
+    height: 1396px;
+    padding: 75px 0;
+}
+
+.video-journey-text-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.video-journey-text-container p {
+    max-width: 720px;
+    height: 90px;
+    font-family: "roboto", sans-serif;
+    font-size: 22px;
+    line-height: 38.5px;
+    color: #000;
+    font-weight: 300;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 8px 0 0 0; /*подогнал вручную, чтобы не добавлять ещё один flex-контейнер*/
+}
+
+.video-active {
+    height: 650px;
+    background-image: url("assets/video/poster0.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 75px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-controls {
+    height: 85px;
+    background-color: #1a5b18;
+    display: flex;
+
 }
