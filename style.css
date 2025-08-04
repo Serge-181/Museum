@@ -21,7 +21,6 @@ body {
     max-width: 1440px;
     margin: 0 auto;
     /* border: 1px solid coral; */
-
 }
 
 header .container {
@@ -80,10 +79,11 @@ li {
 }
 
 .logo-icon {
-    background-image: url("assets\svg\Logo.svg");
+    background-image: url("assets/svg/Logo.svg");
+    
     width: 49px;
-    height: 26px;
-
+    height: 26px;    
+    
     transition: 0.2s;
     /* скорость изменения цвета логотипа */
 }
