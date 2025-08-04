@@ -414,7 +414,21 @@ h1 {
 
 .player-controls {
     height: 85px;
-    background-color: #1a5b18;
+    background-color: #000;
     display: flex;
+    justify-content: space-between;
+    align-items: center;  
+    padding: 0 30px;  
+}
 
+.nav-bar {
+    width: 929px;
+    height: 8px;
+    background-color: #c4c4c4;
+}
+
+.volume-slider{
+    width: 155px;
+    height: 8px;
+    background-color: #c4c4c4;
 }
