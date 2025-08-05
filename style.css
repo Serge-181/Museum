@@ -511,7 +511,53 @@ h1 {
     background-color: #999;
 }
 
-#thumbnail-nav-container div:nth-of-type(1) { /*active dot*/
+#thumbnail-nav-container div:nth-of-type(1) {
+    /*active dot*/
     background-color: #333;
 }
 
+#gallery .container {
+    height: 2200px;
+    padding: 75px 0 0 0;
+}
+
+#gallery-container {
+    /* background-color: cadetblue; */
+    margin-top: 75px;
+    height: 1960px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    /*обрезает изображения, выходящие за край контейнера*/
+    position: relative;
+}
+
+.gallery-column {
+    display: flex;
+    flex-direction: column;
+    max-width: 456px;
+    gap: 24px;
+    margin-top: 50px;
+}
+
+.gallery-column:nth-of-type(2) {
+    margin-top: 0px;
+}
+
+#gallery-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 360px;
+    /* высота затемнения */
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
+    pointer-events: none;
+    /* чтобы не мешал кликам */
+    /* z-index: 1; */
+}
+
+#tickets {
+    height: 893px;
+}
