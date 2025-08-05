@@ -496,3 +496,22 @@ h1 {
     margin-right: auto;
     /*выталкивает иконку меню (три точки) к правому краю*/
 }
+
+#thumbnail-nav-container {
+    margin: 40px auto 0 auto;
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#round-dot {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: #999;
+}
+
+#round-dot:nth-of-type(1) { /*active dot*/
+    background-color: #333;
+}
+
