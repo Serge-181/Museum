@@ -259,7 +259,7 @@ h1 {
 .visiting h2::after {
     content: "";
     position: absolute;
-    bottom: -25px;
+    bottom: -28px;
     left: 0;
     right: 0;
     background-color: var(--dark-red);
@@ -273,8 +273,8 @@ h1 {
     align-content: space-between;
     gap: 20px;
     height: 923px;
-    /* background-color: bisque; */
-    margin-top: 100px;
+    background-color: bisque;
+    margin-top: 103px;
     flex-wrap: wrap;
 }
 
@@ -283,7 +283,7 @@ h1 {
     height: 424px;
     width: 440px;
     text-decoration: none;
-    /* border: 1px solid blue; */
+
 }
 
 .visiting-card h3 {
@@ -301,7 +301,7 @@ h1 {
     /* полоска под заголовком */
     content: "";
     position: absolute;
-    bottom: -10px;
+    bottom: -12px;
     left: 0;
     width: 100%;
     background-color: var(--dark-red);
