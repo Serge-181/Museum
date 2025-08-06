@@ -561,7 +561,6 @@ h1 {
 #tickets .container {
     height: 893px;
     padding: 75px 0;
-    background-color: #c4c4c4;
 }
 
 #tickets h2 {
@@ -581,7 +580,7 @@ h1 {
 
 #tickets-container {
     margin-top: 103px;
-    background-color: cornflowerblue;
+    /* background-color: cornflowerblue; */
     height: 550px;
     display: flex;
     justify-content: space-between;
@@ -590,13 +589,18 @@ h1 {
 #ticket-type {
     width: 270px;
     height: 211px;
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 
-#ticket-type p {
+.ticket-headings {
     font-family: 'Roboto', sans-serif;
     font-size: 28px;
     font-weight: bold;
+    margin-top: 0;
+}
+
+#ticket-type p {
+    margin-bottom: 50px;
 }
 
 .radio-container {
@@ -616,6 +620,7 @@ h1 {
     cursor: pointer;
     padding-left: 40px;
     margin-bottom: 25px;
+    transition-duration: 0.1s;
 }
 
 /* Hide the browser's default radio button */
@@ -637,13 +642,22 @@ h1 {
     border: 2px solid black;
     border-radius: 50%;
     transform: translate(0%, -50%);
+    transition-duration: 0.1s;
 }
 
 /* On mouse-over, add a grey background color */
 .radio-container:hover input~.checkmark {
-    background-color: #c4c4c4;
+    /* background-color: #c4c4c4; */
+    height: 18px;
+    width: 18px;
+    left: -0.5px;
+    border-color: #555;
 }
 
+.radio-container:hover {
+    color: #555;
+    font-size: 23px;
+}
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
 .checkmark:after {
@@ -659,11 +673,95 @@ h1 {
 
 /* Style the indicator (dot/circle) */
 .radio-container .checkmark:after {
-    top: 6.5px;
-    left: 6.5px;
+    top: 50%;
+    left: 50%;
     width: 7px;
     height: 7px;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     background-color: #000;
 }
+
+.tickets-options {
+    display: flex;
+    width: 660px;
+    justify-content: space-between;
+}
+
+#amount {
+    width: 150px;
+    position: relative;
+}
+
+#amount p {
+    margin-bottom: 25px;
+    text-align: right;
+}
+
+.buy-button {
+    width: 175px;
+    height: 50px;
+    border-radius: 2px;
+    position: absolute;
+    right: 0;
+    background-color: #000;
+    color: var(--font-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'roboto', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    font-weight: 300;
+    margin-top:60px;
+    cursor: pointer;
+}
+
+.visitor-category {
+    font-family: 'roboto', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.counter {
+    box-sizing: border-box;
+    width: 150px;
+    height: 50px;
+    border: 3px solid #000;
+    margin: 15px 0 10px 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 11px;
+}
+
+.counter button {
+    all: unset;
+    font-size: 32px;
+    font-weight: 400;
+    width: 20px;
+    cursor: pointer;
+}
+
+.ticket-amount {
+    all: unset;
+    width: 40px;
+    text-align: center;
+    padding-left: 12px;
+    font-family: 'roboto', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.total-amount {
+    font-family: 'roboto', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1.6px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.total-amount div:first-of-type {
+    width: 97px;
+}
+
