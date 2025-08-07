@@ -342,7 +342,7 @@ h1 {
     /* полоска под заголовком */
     content: "";
     position: absolute;
-    bottom: -25px;
+    bottom: -28px;
     left: 0;
     width: 100%;
     background-color: var(--dark-red);
@@ -768,7 +768,7 @@ h1 {
     width: 1920px;
     height: 400px;
     margin: 0 auto;
-    background-image: url(/assets/img/parallax.jpg);
+    background-image: url(assets/img/parallax.jpg);
     background-position: center;
     background-size: cover;
     overflow: hidden;
@@ -816,4 +816,24 @@ h1 {
     font-weight: 300;
     font-size: 22px;
     margin-bottom: 25px;
+}
+
+footer .container {
+    height: 392px;
+    color: var(--font-white);
+    font-family: 'roboto', sans-serif;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.footer-top {
+    display: flex;
+}
+
+.footer-nav {
+    display: flex;
 }
