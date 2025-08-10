@@ -3,6 +3,8 @@
     --dark-red: #710707;
     --font-gold: #9d8665;
     --font-white: #fff;
+    --transition-time: 0.2s;
+    --transition-time-slower: 0.3s;
 }
 
 html {
@@ -31,7 +33,6 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* border: 2px solid greenyellow; */
 }
 
 nav {
@@ -67,7 +68,7 @@ li {
 .menu li a {
     text-decoration: none;
     color: inherit;
-    transition-duration: 0.2s;
+    transition-duration: var(--transition-time);
 }
 
 .menu li a:hover {
@@ -94,17 +95,15 @@ li {
 }
 
 .logo-icon {
-    background-image: url("assets/svg/Logo.svg");
-
+    background-color: var(--font-white);
+    mask-image: url("assets/svg/Logo.svg");
     width: 49px;
     height: 26px;
-
-    transition: 0.2s;
-    /* скорость изменения цвета логотипа */
+    transition: var(--transition-time);
 }
 
 .logo-icon:hover {
-    background-image: url("assets/svg/logo 2.svg");
+    background-color: var(--font-gold);
     cursor: pointer;
 }
 
@@ -138,6 +137,12 @@ li {
     letter-spacing: 5px;
     color: var(--font-white);
     margin: 0;
+    transition-duration: var(--transition-time);
+}
+
+.section-title-dark:hover {
+    color: var(--font-gold);
+    cursor: default;
 }
 
 .text-subheading {
@@ -161,10 +166,13 @@ li {
     position: relative;
 }
 
+#welcome .container {
+    height: 810px;
+}
+
 .pagination-container {
     width: 600px;
     height: 120px;
-    /* border: 1px solid greenyellow; */
     background-color: var(--bg-dark);
     position: absolute;
     right: 0;
@@ -185,7 +193,6 @@ li {
     letter-spacing: 0;
     line-height: 40px;
     padding-left: 74px;
-    /* border: 1px solid aquamarine;     */
 }
 
 .welcome-slide-num div:nth-of-type(2) {
@@ -298,6 +305,10 @@ h1 {
     text-decoration: none;
 }
 
+.visiting-card:hover h3::after {
+width: 100%;
+}
+
 .visiting-card h3 {
     font-family: "forum", serif;
     font-size: 32px;
@@ -315,10 +326,10 @@ h1 {
     position: absolute;
     bottom: -12px;
     left: 0;
-    width: 100%;
     background-color: var(--dark-red);
-    width: 300px;
+    width: 68.18%;    
     height: 2px;
+    transition-duration: var(--transition-time-slower);
 }
 
 .visiting-card p:nth-of-type(1) {
@@ -636,7 +647,7 @@ h1 {
     cursor: pointer;
     padding-left: 40px;
     margin-bottom: 25px;
-    transition-duration: 0.1s;
+    transition-duration: var(--transition-time);
 }
 
 /* Hide the browser's default radio button */
@@ -658,7 +669,7 @@ h1 {
     border: 2px solid black;
     border-radius: 50%;
     transform: translate(0%, -50%);
-    transition-duration: 0.1s;
+    transition-duration: var(--transition-time);
 }
 
 /* On mouse-over */
@@ -884,6 +895,7 @@ h1 {
     justify-content: space-between;
     align-items: baseline;
     margin-top: 84px;
+    text-decoration: none;
 }
 
 .logo-container-b img {
@@ -917,6 +929,7 @@ h1 {
 .footer-nav a {
     text-decoration: none;
     color: inherit;
+    transition-duration: var(--transition-time);
 }
 
 .footer-nav a:hover {
@@ -937,7 +950,7 @@ h1 {
     border-radius: 50%;
     box-sizing: border-box;
     margin-bottom: 50px;
-    transition-duration: 0.1s;
+    transition-duration: var(--transition-time);
 }
 
 .footer-social a::before {
@@ -948,7 +961,7 @@ h1 {
     /* цвет "заливки" маски, т.е. сама иконка */
     mask-repeat: no-repeat;
     mask-position: center;
-    transition-duration: 0.1s;
+    transition-duration: var(--transition-time);
 }
 
 .footer-social a:hover {
