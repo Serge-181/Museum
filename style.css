@@ -472,6 +472,10 @@ h1 {
     align-items: center;
 }
 
+.video-active img:hover {
+cursor: pointer;
+}
+
 .player-controls {
     height: 85px;
     background-color: #000;
