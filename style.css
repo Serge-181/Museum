@@ -7,25 +7,30 @@
     --transition-time-slower: 0.3s;
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
+li {
+    list-style: none;
+}
+
 section {
     width: 100%;
-    margin: 0 auto;
 }
 
 body {
     background-color: var(--bg-dark);
-    margin: 0 auto;
-    padding: 0;
 }
 
 .container {
     max-width: 1440px;
     margin: 0 auto;
-    box-sizing: border-box;
     position: relative;
 }
 
@@ -35,53 +40,51 @@ header .container {
     align-items: center;
 }
 
-nav {
-    all: unset;
-    display: contents;
-    /* Makes nav behave as if it's not there */
+@media (min-width: 1025px) {
+    .menu {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        justify-content: space-between;
+        align-items: center;
+        width: 775px;
+        height: 150px;
+        color: var(--font-white);
+    }
+}
+
+@media (max-width: 1024px) {
+    .menu {
+        display: none;
+    }
 }
 
 
 .menu {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 775px;
-    flex-grow: 1;
-    height: 150px;
-
-    color: var(--font-white);
-}
-
-li {
-    list-style: none;
+    font-size: 22px;
+    line-height: 150px;    
 }
 
 .menu li {
-    font-size: 22px;
-    line-height: 150px;
-    padding: 0 10px;
+   padding: 0 10px;  
 }
 
-.menu li a {
-    text-decoration: none;
-    color: inherit;
-    transition-duration: var(--transition-time);
-}
-
-.menu li a:hover {
-    color: var(--font-gold)
-}
-
-
-.menu li:first-of-type {
+.menu li:nth-of-type(1) {
     padding-left: 0;
 }
 
-.menu li:last-of-type {
+.menu li:nth-of-type(6) {
     padding-right: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: inherit;
+    transition-duration: var(--transition-time);
+   }
+
+.menu a:hover {
+    color: var(--font-gold)
 }
 
 .logo-container {
@@ -115,6 +118,10 @@ li {
     text-transform: uppercase;
     font-weight: 100;
     padding-left: 10px;
+}
+
+#banner-text {
+    max-width: 598px;
 }
 
 .section-title {
@@ -153,6 +160,11 @@ li {
 
 #welcome {
     background-color: var(--bg-dark);
+    position: relative;
+}
+
+#welcome .container {
+    height: 810px;
     background-image:
         linear-gradient(to right, rgba(0, 0, 0, 1)0%, rgba(0, 0, 0, 0.5)16%, rgba(0, 0, 0, 0)31%),
         /* затемнение слева направо */
@@ -160,14 +172,6 @@ li {
     background-repeat: no-repeat;
     background-position: top right;
     background-size: 1000px 750px;
-    height: 810px;
-    width: 1440px;
-    /* border: 1px solid red; */
-    position: relative;
-}
-
-#welcome .container {
-    height: 810px;
 }
 
 .pagination-container {
@@ -203,8 +207,6 @@ li {
     display: flex;
     width: 180px;
     justify-content: space-between;
-    padding-right: 5px;
-    /* border: 1px solid blueviolet; */
 }
 
 .carousel-pagination-container div {
@@ -212,6 +214,12 @@ li {
     width: 16px;
     height: 16px;
     background-color: var(--font-white);
+    transition-duration: var(--transition-time);
+}
+
+.carousel-pagination-container div:hover {
+    background-color: var(--font-gold);
+    cursor: pointer;
 }
 
 .carousel-pagination-container div:first-of-type {
@@ -223,7 +231,7 @@ li {
     display: flex;
     justify-content: space-between;
     width: 80px;
-    padding-right: 75px;
+    margin-right: 75px;
 }
 
 h1 {
@@ -269,7 +277,7 @@ h1 {
 
 .visiting {
     background-color: #fff;
-    height: 1116px;
+    height: 1266px;
     padding: 75px 0;
 }
 
@@ -306,7 +314,7 @@ h1 {
 }
 
 .visiting-card:hover h3::after {
-width: 100%;
+    width: 100%;
 }
 
 .visiting-card h3 {
@@ -327,7 +335,7 @@ width: 100%;
     bottom: -12px;
     left: 0;
     background-color: var(--dark-red);
-    width: 68.18%;    
+    width: 68.18%;
     height: 2px;
     transition-duration: var(--transition-time-slower);
 }
