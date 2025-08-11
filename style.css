@@ -62,11 +62,11 @@ header .container {
 
 .menu {
     font-size: 22px;
-    line-height: 150px;    
+    line-height: 150px;
 }
 
 .menu li {
-   padding: 0 10px;  
+    padding: 0 10px;
 }
 
 .menu li:nth-of-type(1) {
@@ -81,7 +81,7 @@ header .container {
     text-decoration: none;
     color: inherit;
     transition-duration: var(--transition-time);
-   }
+}
 
 .menu a:hover {
     color: var(--font-gold)
@@ -233,6 +233,30 @@ header .container {
     width: 80px;
     margin-right: 75px;
 }
+
+.pagination-arrows div {
+    width: 30px;
+    height: 8px;
+    background-color: #fff;
+    mask-repeat: no-repeat;
+    transition-duration: var(--transition-time);
+}
+
+.pagination-arrows div:hover {
+    background-color: var(--font-gold);
+    cursor: pointer;
+}
+
+
+.pagination-arrows div:first-child {
+    mask-image: url(assets/svg/arrow-left.svg);
+}
+
+.pagination-arrows div:last-child {
+    mask-image: url(assets/svg/arrow-right.svg);
+}
+
+
 
 h1 {
     margin: 0 0 25px 0;
