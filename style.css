@@ -14,7 +14,6 @@
 
 html {
     scroll-behavior: smooth;
-    background-color: aqua;
 }
 
 li {
@@ -23,17 +22,21 @@ li {
 
 body {
     background-color: var(--bg-dark);
-    margin: 0 auto;
     width: 100%;
+    /* background-color: aqua; */
 }
 
+header {
+    padding: 0 20px;
+}
 
-head {
-    margin: 0 auto;
+footer {
+    padding: 0 20px;
 }
 
 section {
     width: 100%;
+    padding: 0 20px;
 }
 
 .container {
@@ -48,7 +51,6 @@ header .container {
     align-items: center;
     height: 150px;
 }
-
 
 .menu {
     display: flex;
@@ -171,6 +173,8 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-left: 74px;
+    padding-right: 75px;
 }
 
 .welcome-slide-num {
@@ -181,7 +185,6 @@ header .container {
     font-size: 22px;
     letter-spacing: 0;
     line-height: 40px;
-    padding-left: 74px;
 }
 
 .welcome-slide-num div:nth-of-type(2) {
@@ -192,6 +195,7 @@ header .container {
     display: flex;
     width: 180px;
     justify-content: space-between;
+    margin-right: 5px;
 }
 
 .carousel-pagination-container div {
@@ -216,7 +220,6 @@ header .container {
     display: flex;
     justify-content: space-between;
     width: 80px;
-    margin-right: 75px;
 }
 
 .pagination-arrows div {
@@ -292,7 +295,8 @@ h1 {
 .visiting {
     background-color: #fff;
     height: 1266px;
-    padding: 75px 0;
+    padding-top: 75px;
+    padding-bottom: 75px;
 }
 
 .visiting h2 {
@@ -306,7 +310,7 @@ h1 {
     left: 0;
     right: 0;
     background-color: var(--dark-red);
-    width: 1440px;
+    width: 100%;
     height: 3px;
 }
 
@@ -314,7 +318,6 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-content: space-between;
-    gap: 20px;
     margin-top: 103px;
     flex-wrap: wrap;
     height: 924px;
@@ -325,6 +328,10 @@ h1 {
     height: 424px;
     width: 440px;
     text-decoration: none;
+}
+
+.visiting-card img {
+    width: 100%;
 }
 
 .visiting-card:hover h3::after {
@@ -852,7 +859,7 @@ h1 {
     left: 0;
     right: 0;
     background-color: var(--dark-red);
-    width: 1440px;
+    width: 100%;
     height: 3px;
 }
 
@@ -1065,13 +1072,98 @@ h1 {
     }
 
     #welcome .container {
-        background-color: green;
         height: 585px;
         background-size: 700px 525px;
     }
 
-}
+    .pagination-container {
+        width: 700px;
+        padding-left: 224px;
+    }
 
+    .welcome-slide-num {
+        font-size: 20px;
+    }
+
+    .carousel-pagination-container {
+        width: 160px;
+        margin: 0 auto;
+    }
+
+    .carousel-pagination-container div {
+        /* один квадратик */
+        width: 12px;
+        height: 12px;
+    }
+
+
+    .section-title {
+        font-size: 50px;
+    }
+
+    .section-title-dark {
+        font-size: 50px;
+    }
+
+    #button {
+        height: 60px;
+        width: 300px;
+        margin: 50px 0 0 0;
+    }
+
+    #button .fs-light {
+        font-size: 20px;
+    }
+
+    #banner-text {
+        padding: 50px 0 0 0;
+    }
+
+    .text-subheading {
+        font-size: 24px;
+    }
+
+    .visiting {
+        height: 1433px;
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .visiting h2::after {
+        bottom: -20px;
+    }
+
+    .visiting-card {
+        height: 345px;
+        width: 330px;
+    }
+
+    .visiting-cards-container {
+        justify-content: space-evenly;
+        margin-top: 83px;
+        height: 1155px;
+    }
+
+    .visiting-card h3 {
+        font-size: 28px;
+        letter-spacing: 3px;
+        margin: 23px 0 20px 0;
+
+    }
+
+    .visiting-card h3::after {
+        /* полоска под заголовком */
+        width: 45%;
+        bottom: -10px;
+    }
+
+    .visiting-card p:nth-of-type(1) {
+        font-size: 20px;
+    }
+
+    .visiting-card p:nth-of-type(2) {
+        font-size: 16px;
+    }
 
 
 
