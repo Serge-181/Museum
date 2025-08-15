@@ -151,14 +151,21 @@ header .container {
 }
 
 #welcome .container {
-    height: 810px;
+    /* height: 810px; */
+    height: min(calc(80vw - 140px), 810px);
     background-image:
-        linear-gradient(to right, rgba(0, 0, 0, 1)0%, rgba(0, 0, 0, 0.5)16%, rgba(0, 0, 0, 0)31%),
+        linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 16%, rgba(0, 0, 0, 0) 31%),
         /* затемнение слева направо */
         url('assets/img/welcome-slider/1.jpg');
-    background-repeat: no-repeat;
-    background-position: top right;
-    background-size: 1000px 750px;
+    background-repeat: no-repeat, no-repeat;
+    background-position: top right, top right;
+
+    background-size:
+        /*размеры градиента*/
+        calc((min(calc(80vw - 140px), 810px) - 60px) * 1.334) auto,
+
+        /*размеры изображения*/
+        auto calc(100% - 60px);
 }
 
 .pagination-container {
@@ -326,12 +333,14 @@ h1 {
 .visiting-card {
     display: block;
     height: 424px;
-    width: 440px;
+    /* width: 440px; */
+    width: min(calc(90vw/3), 440px);
     text-decoration: none;
 }
 
 .visiting-card img {
     width: 100%;
+    height: auto;
 }
 
 .visiting-card:hover h3::after {
@@ -869,6 +878,13 @@ h1 {
     justify-content: space-between;
     font-family: 'roboto', sans-serif;
 }
+
+.contacts-container img {
+    width: min(calc(100vw - 400px), 960px);
+    height: min(calc(65vw - 260px), 620px);
+
+}
+
 
 .contacts-text>p {
     font-weight: 500;
