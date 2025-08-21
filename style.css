@@ -1,3 +1,5 @@
+@import url("/adaptive.css");
+
 :root {
     --bg-dark: #030303;
     --dark-red: #710707;
@@ -5,6 +7,11 @@
     --font-white: #fff;
     --transition-time: 0.2s;
     --transition-time-slower: 0.3s;
+    --slider-position: 61%;
+}
+
+img {
+    display: block;
 }
 
 * {
@@ -301,9 +308,7 @@ h1 {
 
 .visiting {
     background-color: #fff;
-    height: 1266px;
-    padding-top: 75px;
-    padding-bottom: 75px;
+    padding-block: 75px;
 }
 
 .visiting h2 {
@@ -324,16 +329,14 @@ h1 {
 .visiting-cards-container {
     display: flex;
     justify-content: space-between;
-    align-content: space-between;
+    align-content: flex-start;
     margin-top: 103px;
     flex-wrap: wrap;
-    height: 924px;
+    row-gap: 75px;
 }
 
 .visiting-card {
     display: block;
-    height: 424px;
-    /* width: 440px; */
     width: min(calc(90vw/3), 440px);
     text-decoration: none;
 }
@@ -355,7 +358,7 @@ h1 {
     font-weight: 400;
     text-transform: uppercase;
     position: relative;
-    margin: 20px 0 22px 0;
+    margin: 25px 0 22px 0;
 }
 
 .visiting-card h3::after {
@@ -389,12 +392,18 @@ h1 {
 }
 
 .explore .container {
-    box-sizing: border-box;
-    /* background-color: aqua; */
-    height: 865px;
-    padding: 75px 0;
+    padding-block: 75px;
+}
+
+.explore-container {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    gap: 20px;
+}
+
+.explore-text-container {
+    max-width: 660px;
 }
 
 .explore h2 {
@@ -409,7 +418,6 @@ h1 {
     left: 0;
     width: 100%;
     background-color: var(--dark-red);
-    width: 660px;
     height: 3px;
 }
 
@@ -421,7 +429,6 @@ h1 {
     color: #fff;
     line-height: 38.5px;
     margin: 0 0 25px 0;
-    max-width: 660px;
 }
 
 .explore p:nth-of-type(1) {
@@ -432,24 +439,42 @@ h1 {
     color: #CAAA7D;
 }
 
-.explore-image {
+.explore-image-container {
     max-width: 720px;
     max-height: 700px;
-    align-self: flex-end;
+    margin-top: 15px;
+    position: relative;
 }
+
+.explore-image-before {
+    position: absolute;
+    width: var(--slider-position);
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: calc(var(--slider-position) - 19px);
+    cursor: pointer;
+}
+
 
 #video-journey {
     background-color: #fff;
 }
 
 #video-journey .container {
-    height: 1396px;
-    padding: 75px 0;
+    padding-block: 75px;
 }
 
 .video-journey-text-container {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 75px;
 }
 
 .video-journey-text-container p {
@@ -463,16 +488,15 @@ h1 {
     margin: 0;
     box-sizing: border-box;
     padding: 8px 0 0 0;
-    /*подогнал вручную, чтобы не добавлять ещё один flex-контейнер*/
 }
 
 .video-active {
     height: 650px;
+    width: 100%;
     background-image: url("assets/video/poster0.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin: 75px 0 0 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -488,7 +512,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 30px;
+    padding-inline: 30px;
 }
 
 .nav-bar {
@@ -882,7 +906,6 @@ h1 {
 .contacts-container img {
     width: min(calc(100vw - 400px), 960px);
     height: min(calc(65vw - 260px), 620px);
-
 }
 
 
@@ -1064,12 +1087,14 @@ h1 {
     background-color: #fff;
 }
 
+/* @import url('/adaptive.css'); */
+
+
 @media (min-width: 1025px) {
     .hamburger {
         display: none;
     }
 }
-
 
 
 /* Стили для планшетов (>768px до 1024px) */
@@ -1112,13 +1137,18 @@ h1 {
         height: 12px;
     }
 
-
     .section-title {
         font-size: 50px;
+        line-height: 75px;
     }
 
     .section-title-dark {
         font-size: 50px;
+        line-height: 75px;
+    }
+
+    .section-title-dark:first-child {
+        line-height: 90px;
     }
 
     #button {
@@ -1157,14 +1187,13 @@ h1 {
     .visiting-cards-container {
         justify-content: space-evenly;
         margin-top: 83px;
-        height: 1155px;
+        row-gap: 60px;
     }
 
     .visiting-card h3 {
         font-size: 28px;
         letter-spacing: 3px;
         margin: 23px 0 20px 0;
-
     }
 
     .visiting-card h3::after {
@@ -1181,6 +1210,69 @@ h1 {
         font-size: 16px;
     }
 
+    .explore .container {
+        padding-block: 60px;
+    }
+
+    .explore-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .explore-text-container {
+        max-width: 100%;
+    }
+
+    .explore h2 {
+        line-height: 75px;
+    }
+
+    .explore h2::after {
+        bottom: -23px;
+    }
+
+    .explore p {
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .explore p:nth-of-type(1) {
+        padding-top: 83px;
+    }
+
+    .explore p:nth-of-type(2) {
+        line-height: 35px;
+    }
+
+    .explore p:nth-of-type(3) {
+        display: none;
+    }
+
+    .explore-image-container {
+        margin-top: 62px;
+    }
+
+    #video-journey .container {
+        padding-block: 60px;
+    }
+
+    .video-journey-text-container {
+        margin-bottom: 40px;
+    }
+
+    .video-journey-text-container p {
+        display: none;
+    }
+
+.video-active {
+    height: 504px;
+}
+
+.video-active img {
+    height: 152px;
+    width: 152px;
+}
 
 
 }
