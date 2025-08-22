@@ -88,7 +88,6 @@ header .container {
     align-items: baseline;
     width: 199px;
     height: 33px;
-    margin-right: 10px;
 }
 
 .logo-icon {
@@ -111,7 +110,6 @@ header .container {
     letter-spacing: 5px;
     text-transform: uppercase;
     font-weight: 100;
-    padding-left: 10px;
 }
 
 #banner-text {
@@ -132,7 +130,7 @@ header .container {
 .section-title-dark {
     font-family: "forum", serif;
     text-transform: uppercase;
-    font-size: 80px;
+    font-size: clamp(55px, 5.5vw, 80px);
     line-height: 90px;
     font-weight: 100;
     letter-spacing: 5px;
@@ -491,8 +489,8 @@ h1 {
 }
 
 .video-active {
-    height: 650px;
     width: 100%;
+    aspect-ratio: 16 / 9;
     background-image: url("assets/video/poster0.jpg");
     background-size: cover;
     background-position: center;
@@ -562,80 +560,26 @@ h1 {
 #video-thumbnails {
     /*контейнер с миниатюрами*/
     display: flex;
-    max-width: 1440px;
+    width: 100%;
     justify-content: space-between;
+    align-items: flex-start;
     margin-top: 40px;
     padding: 0;
+    gap: 30px;
 }
-
-
-#video-thumbnails li {
-    /*одна миниатюра*/
-    /* position: relative;
-    width: 452px;
-    height: 254px;
-    cursor: pointer; */
-}
-
 
 .youtube-thumbnail {
+    /* flex: 1; */
+    position: relative;
     width: 452px;
-    max-width: 100%;
-    aspect-ratio: 16 / 9;
-    background: #000;
+    aspect-ratio: 16/9;
 }
 
 .youtube-thumbnail iframe {
     width: 100%;
     height: 100%;
     border: none;
-}
-
-
-#video-thumbnails li:nth-of-type(1) {
-    background: url(assets/video/poster3.jpg) center center no-repeat;
-    background-size: cover;
-}
-
-#video-thumbnails li:nth-of-type(2) {
-    background: url(assets/video/poster1.jpg) center center no-repeat;
-    background-size: cover;
-}
-
-#video-thumbnails li:nth-of-type(3) {
-    background: url(assets/video/poster2.jpg) center center no-repeat;
-    background-size: cover;
-}
-
-.thumbnail-play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.video-header {
-    /* контейнер заголовка миниатюры */
-    display: flex;
-    /* justify-content: space-between; */
-    padding: 15px 36px 0 10px;
-}
-
-.video-header img:last-of-type {
-    justify-self: flex-start;
-}
-
-.video-title {
-    /*Текст заголовка миниатюры*/
-    max-width: 329px;
-    color: var(--font-white);
-    font-family: "roboto", sans-serif;
-    line-height: 38.5px;
-    font-size: 18px;
-    font-weight: 400;
-    margin-left: 10px;
-    margin-right: auto;
-    /*выталкивает иконку меню (три точки) к правому краю*/
+    display: block;
 }
 
 #thumbnail-nav-container {
@@ -1311,10 +1255,6 @@ h1 {
 
     .video-journey-text-container p {
         display: none;
-    }
-
-    .video-active {
-        height: 504px;
     }
 
     .video-active img {
