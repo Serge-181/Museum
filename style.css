@@ -568,13 +568,29 @@ h1 {
     padding: 0;
 }
 
+
 #video-thumbnails li {
     /*одна миниатюра*/
-    position: relative;
+    /* position: relative;
     width: 452px;
     height: 254px;
-    cursor: pointer;
+    cursor: pointer; */
 }
+
+
+.youtube-thumbnail {
+    width: 452px;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+}
+
+.youtube-thumbnail iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
 
 #video-thumbnails li:nth-of-type(1) {
     background: url(assets/video/poster3.jpg) center center no-repeat;
