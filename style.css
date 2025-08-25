@@ -670,16 +670,28 @@ h1 {
     margin-top: 103px;
     display: flex;
     justify-content: space-between;
-    background-color: brown;
 }
 
-#tickets-container img {
-    max-width: 720px;
-    max-height: 550px;
+.tickets-image-container {
+    width: 720px;
+    height: clamp(440px, 40vw, 550px);
+    overflow: hidden;
+    position: relative;
 }
+
+.tickets-image-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 
 #ticket-type {
     width: 270px;
+    margin-left: clamp(20px, calc(4vw - 20px), 60px);
+    margin-right: auto;
+    flex-shrink: 0;
 }
 
 .ticket-headings {
@@ -765,12 +777,6 @@ h1 {
     background-color: #000;
 }
 
-.tickets-options {
-    display: flex;
-    max-width: 660px;
-    justify-content: space-between;
-    column-gap: 20px;
-}
 
 #amount {
     width: 150px;
@@ -793,11 +799,9 @@ h1 {
     font-size: 22px;
     line-height: 26px;
     font-weight: 300;
-    background-color: #710707;
 }
 
 .visitor-category:nth-of-type(2) {
-    background-color: greenyellow;
     margin-top: 10px;
 }
 
@@ -880,8 +884,7 @@ h1 {
 }
 
 #contacts .container {
-    height: 962px;
-    padding: 75px 0 74px 0;
+    padding-block: 75px;
 }
 
 #contacts h2 {
@@ -901,19 +904,26 @@ h1 {
 }
 
 .contacts-container {
-    height: 620px;
     display: flex;
     justify-content: space-between;
     font-family: 'roboto', sans-serif;
 }
 
-.contacts-container img {
-    width: min(calc(100vw - 400px), 960px);
-    height: min(calc(65vw - 260px), 620px);
+.map-container {
+    width: clamp(694px, 65vw, 960px);
+    height: clamp(454px, calc(65vw/1.54), 620px);
+    overflow: hidden;
+    position: relative;
 }
 
+.map-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
-.contacts-text>p {
+.contacts-heading {
     font-weight: 500;
     font-size: 28px;
     margin-bottom: 50px;
@@ -922,20 +932,21 @@ h1 {
 
 .contact-details p {
     font-weight: 300;
-    font-size: 22px;
+    font-size: clamp(20px, calc(2vw - 1px), 22px);
     margin-bottom: 25px;
+}
+
+footer {
+    color: var(--font-white);
+    font-family: 'roboto', sans-serif;
 }
 
 .container .footer-top {
     height: 265px;
-    color: var(--font-white);
-    font-family: 'roboto', sans-serif;
 }
 
 .container .footer-bottom {
     height: 124px;
-    color: var(--font-white);
-    font-family: 'roboto', sans-serif;
 }
 
 .footer-bottom {
@@ -1091,7 +1102,12 @@ h1 {
     background-color: #fff;
 }
 
-/* @import url('/adaptive.css'); */
+
+@media (max-width: 1200px) {
+    #ticket-type {
+        display: none;
+    }
+}
 
 
 @media (min-width: 1025px) {
@@ -1318,15 +1334,12 @@ h1 {
         margin-top: 82px;
     }
 
-    #tickets-container img {
+    .tickets-image-container {
         width: 700px;
         height: 440px;
     }
 
 
-    #ticket-type {
-        display: none;
-    }
 
     .tickets-options {
         justify-content: flex-end;
@@ -1353,7 +1366,21 @@ h1 {
     }
 
 
+    .map-container {
+        width: 694px;
+        height: 454px;
+    }
 
+
+    .contacts-heading {
+        font-size: 24px;
+        margin-bottom: 35px;
+    }
+
+    .contact-details p {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
 
 
 
