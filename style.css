@@ -119,7 +119,7 @@ header .container {
 .section-title {
     font-family: "forum", serif;
     text-transform: uppercase;
-    font-size: 80px;
+    font-size: clamp(55px, 5.5vw, 80px);
     line-height: 90px;
     font-weight: 100;
     letter-spacing: 5px;
@@ -255,8 +255,6 @@ header .container {
 .pagination-arrows div:last-child {
     mask-image: url(assets/svg/arrow-right.svg);
 }
-
-
 
 h1 {
     margin: 0 0 25px 0;
@@ -602,31 +600,34 @@ h1 {
 }
 
 #gallery .container {
-    height: 2200px;
     padding: 75px 0 0 0;
 }
 
 #gallery-container {
-    /* background-color: cadetblue; */
     margin-top: 75px;
-    height: 1960px;
+    height: clamp(1265px, 120vw, 1960px);
     display: flex;
     justify-content: space-between;
     overflow: hidden;
-    /*обрезает изображения, выходящие за край контейнера*/
     position: relative;
+    column-gap: 24px;
 }
 
 .gallery-column {
     display: flex;
     flex-direction: column;
-    max-width: 456px;
-    gap: 24px;
+    width: 456px;
+    row-gap: 24px;
     margin-top: 50px;
 }
 
 .gallery-column:nth-of-type(2) {
     margin-top: 0px;
+}
+
+.gallery-column img {
+    width: 100%;
+    height: auto;
 }
 
 #gallery-container::after {
@@ -640,11 +641,13 @@ h1 {
     background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
     pointer-events: none;
     /* чтобы не мешал кликам */
-    /* z-index: 1; */
+}
+
+#tickets {
+    background-color: #fff;
 }
 
 #tickets .container {
-    height: 893px;
     padding: 75px 0;
 }
 
@@ -665,27 +668,24 @@ h1 {
 
 #tickets-container {
     margin-top: 103px;
-    /* background-color: cornflowerblue; */
-    height: 550px;
     display: flex;
     justify-content: space-between;
+    background-color: brown;
+}
+
+#tickets-container img {
+    max-width: 720px;
+    max-height: 550px;
 }
 
 #ticket-type {
     width: 270px;
-    height: 211px;
-    /* background-color: aqua; */
 }
 
 .ticket-headings {
     font-family: 'Roboto', sans-serif;
     font-size: 28px;
     font-weight: bold;
-    margin-top: 0;
-}
-
-#ticket-type p {
-    margin-bottom: 50px;
 }
 
 .radio-container {
@@ -697,7 +697,6 @@ h1 {
     font-family: 'Roboto', sans-serif;
     font-size: 22px;
     font-weight: 300;
-
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -768,51 +767,46 @@ h1 {
 
 .tickets-options {
     display: flex;
-    width: 660px;
+    max-width: 660px;
     justify-content: space-between;
+    column-gap: 20px;
 }
 
 #amount {
     width: 150px;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#ticket-type p {
+    text-align: left;
+    margin-bottom: 50px;
 }
 
 #amount p {
-    margin-bottom: 25px;
     text-align: right;
-}
-
-.buy-button {
-    width: 175px;
-    height: 50px;
-    border-radius: 2px;
-    position: absolute;
-    right: 0;
-    background-color: #000;
-    color: var(--font-white);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'roboto', sans-serif;
-    font-size: 22px;
-    letter-spacing: 2px;
-    font-weight: 300;
-    margin-top: 60px;
-    cursor: pointer;
+    margin-bottom: 25px;
 }
 
 .visitor-category {
     font-family: 'roboto', sans-serif;
     font-size: 22px;
+    line-height: 26px;
     font-weight: 300;
+    background-color: #710707;
+}
+
+.visitor-category:nth-of-type(2) {
+    background-color: greenyellow;
+    margin-top: 10px;
 }
 
 .counter {
     box-sizing: border-box;
-    width: 150px;
+    width: 100%;
     height: 50px;
     border: 3px solid #000;
-    margin: 15px 0 10px 0;
+    margin: 15px 0 0 0;
     display: flex;
     justify-content: space-between;
     padding: 0 11px;
@@ -848,6 +842,24 @@ h1 {
 
 .total-amount div:first-of-type {
     width: 97px;
+}
+
+.buy-button {
+    width: 175px;
+    height: 50px;
+    border-radius: 2px;
+    align-self: flex-end;
+    background-color: #000;
+    color: var(--font-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'roboto', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    font-weight: 300;
+    margin-top: 60px;
+    cursor: pointer;
 }
 
 .parallax {
@@ -1261,6 +1273,91 @@ h1 {
         height: 152px;
         width: 152px;
     }
+
+
+
+
+    #gallery .container {
+        padding: 60px 0 0 0;
+    }
+
+    #gallery-container {
+        margin-top: 60px;
+        height: 1265px;
+    }
+
+    .gallery-column {
+        max-width: 304px;
+    }
+
+    .gallery-column img {
+        width: 100%;
+        height: auto;
+    }
+
+
+    #gallery-container::after {
+        height: 239px;
+    }
+
+
+
+
+
+
+    #tickets .container {
+        padding: 60px 0;
+    }
+
+    #tickets h2::after {
+        /* полоска под заголовком */
+        bottom: -20px;
+    }
+
+    #tickets-container {
+        margin-top: 82px;
+    }
+
+    #tickets-container img {
+        width: 700px;
+        height: 440px;
+    }
+
+
+    #ticket-type {
+        display: none;
+    }
+
+    .tickets-options {
+        justify-content: flex-end;
+    }
+
+    #amount {
+        width: 175px;
+    }
+
+    #amount p {
+        text-align: left;
+    }
+
+    .visitor-category:nth-of-type(2) {
+        margin-top: 25px;
+    }
+
+    .total-amount {
+        margin-top: 25px;
+    }
+
+    .buy-button {
+        margin-top: auto;
+    }
+
+
+
+
+
+
+
 
 
 }
